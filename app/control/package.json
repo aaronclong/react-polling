@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "webserver": "node index.js" ,
+    "webserver": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aaron Long",
@@ -15,6 +15,7 @@
     "standard": "^9.0.0"
   },
   "dependencies": {
+    "koa": "^2.0.1",
     "koa-cors": "0.0.16",
     "koa-route": "^3.2.0",
     "socket.io": "^1.7.3"

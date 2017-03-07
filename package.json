@@ -1,0 +1,14 @@
+{
+  "name": "react-polling",
+  "version": "0.0.1",
+  "description": "Front-end and Back-end of Socket.io app experiment",
+  "main": "run-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Long",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
+}
