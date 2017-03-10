@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import { Router, Route, Link, hashHistory } from 'react-router'
 import io from 'socket.io-client'
-import './App.css'
+import list from './cmp/list'
+import Poll from './pages/Poll'
+import './App.sass'
 
 class App extends Component {
   componentWillMount () {
@@ -11,15 +13,17 @@ class App extends Component {
     })
   }
   render () {
+    let links = [<Link to='/'>Poll</Link>]
     return (
       <div className='App'>
-        <div className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h2>Socket.io Stuff</h2>
+        <div className='tabs is-centered'>
+          { list(links) }
         </div>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <Router history={hashHistory}>
+            <Route path='/' component={Poll} />
+          </Router>
+        </div>
       </div>
     )
   }

@@ -1,5 +1,4 @@
-// const chalk = require('chalk')
-// const program = require('commander')
+const chalk = require('chalk')
 const repl = require('repl')
 const spawn = require('child_process').spawn
 
@@ -59,6 +58,13 @@ function restart (service) {
   }
 }
 
+function end () {
+  backEnd.kill()
+  frontEnd.kill()
+  process.exit()
+}
+
 const r = repl.start({prompt: '> '})
 
 r.context.restart = restart
+r.context.end = end
