@@ -11,6 +11,14 @@ function test (state = { something: [] }, action) {
   return state
 }
 
-const root = combineReducers({test})
+function activeHeaderLink (state = { currentIndex: 0 }, action) {
+  switch (action.type) {
+    case actions.ACTIVE_HEADER_LINK:
+      return Object.assign({}, state, action.currentItem)
+  }
+  return state
+}
+
+const root = combineReducers({ test, activeHeaderLink })
 
 export default root

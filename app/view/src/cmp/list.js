@@ -1,9 +1,14 @@
 import React from 'react'
+import layoutActions from '../actions/layoutActions'
 
-const click = props => { }
+const click = id => {
+  return () => layoutActions(id)
+}
 
-const generateList = array => {
-  return array.map((e, i) => <li onClick={click} key={i}> {e} </li>)
+const generateList = props => {
+  const { index, links } = props
+  console.log(index)
+  return links.map((e, i) => <li className='is-active' onClick={click(i)} key={i}> {e} </li>)
 }
 
 const list = props => {

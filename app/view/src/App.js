@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import io from 'socket.io-client'
 import Layout from './pages/Layout'
 import Poll from './pages/Poll'
@@ -16,7 +16,7 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
           <Route path='/' component={Layout} >
             <IndexRoute component={Poll} />
             <Route path='results' component={Results} />
