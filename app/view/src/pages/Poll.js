@@ -1,7 +1,14 @@
-import React from 'react'
+/* eslint react/prop-types: 0 */
+import React, { Component } from 'react'
 
-const Poll = props => {
-  return <h1>Lets do some polling</h1>
+class Poll extends Component {
+  render () {
+    return (
+      <div>
+        <h1>Lets do some polling</h1>
+      </div>
+    )
+  }
 }
 
 export default Poll

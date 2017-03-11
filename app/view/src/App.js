@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Router, Route, Link, hashHistory } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import io from 'socket.io-client'
-import list from './cmp/list'
+import Layout from './pages/Layout'
 import Poll from './pages/Poll'
+import Results from './pages/Results'
 import './App.sass'
 
 class App extends Component {
@@ -13,17 +14,14 @@ class App extends Component {
     })
   }
   render () {
-    let links = [<Link to='/'>Poll</Link>]
     return (
       <div className='App'>
-        <div className='tabs is-centered'>
-          { list(links) }
-        </div>
-        <div>
-          <Router history={hashHistory}>
-            <Route path='/' component={Poll} />
-          </Router>
-        </div>
+        <Router history={hashHistory}>
+          <Route path='/' component={Layout} >
+            <IndexRoute component={Poll} />
+            <Route path='results' component={Results} />
+          </Route>
+        </Router>
       </div>
     )
   }
