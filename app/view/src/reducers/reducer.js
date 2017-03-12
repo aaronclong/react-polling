@@ -12,9 +12,11 @@ function test (state = { something: [] }, action) {
 }
 
 function activeHeaderLink (state = { currentIndex: 0 }, action) {
+  console.log('This is state', state)
+  console.log('This is action:', action)
   switch (action.type) {
     case actions.ACTIVE_HEADER_LINK:
-      return Object.assign({}, state, action.currentItem)
+      return Object.assign({}, state, {currentItem: action.currentItem})
   }
   return state
 }

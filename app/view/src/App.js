@@ -12,6 +12,7 @@ class App extends Component {
     this.socket.on('connect', () => {
       console.log('Socket id %s', this.socket.id)
     })
+    console.log('History', browserHistory.getCurrentLocation())
   }
   render () {
     return (
