@@ -14,4 +14,14 @@ const network = io.listen(server)
 
 network.on('connection', socket => {
   console.log('Connected to %s', socket.id)
+  const data = () => {
+    const interval = db.length > 0 ? db.length - 1 : null
+    if (interval === null) return '{}'
+    else JSON.stringify(db[interval])
+  }
+  network.emit('results', data())
+})
+
+network.on('poll', data => {
+  console.log(data)
 })
