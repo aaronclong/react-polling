@@ -10,6 +10,6 @@ socket.on('connect', () => {
 
 socket.on('reconnect_error', () => socketAction.conError(socket.id))
 
-socket.on('results', data => socketAction.onRecieved(JSON.parse(data)))
+socket.on('results', data => socketAction.onRecieved(data))
 
 export default socket

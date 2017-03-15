@@ -23,8 +23,7 @@ function socketIO (state = { connected: false,
   socketId: null,
   recieved: {},
   sent: {}
-},
-                   action) {
+}, action) {
   if (action.type.search('SOCKET_IO_') <= -1) return state
   switch (action.type) {
     case actions.SOCKET_IO_CONNECT:
@@ -33,7 +32,6 @@ function socketIO (state = { connected: false,
     case actions.SOCKET_IO_RECIEVE:
       return Object.assign({}, state, { recieved: action.recieved })
     case actions.SOCKET_IO_SEND:
-      console.log('Ello')
       return Object.assign({}, state, action.contents)
   }
 }

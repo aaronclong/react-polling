@@ -15,10 +15,10 @@
     "standard": "^9.0.0"
   },
   "dependencies": {
+    "alasql": "^0.3.8",
     "koa": "^2.0.1",
     "koa-cors": "0.0.16",
     "koa-route": "^3.2.0",
-    "lokijs": "^1.4.3",
     "socket.io": "^1.7.3"
   }
 }
