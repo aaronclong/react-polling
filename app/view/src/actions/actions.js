@@ -10,6 +10,4 @@ const actions = {
   SOCKET_IO_SEND: 'SOCKET_IO_SEND'
 }
 
-// export const initialState = {}
-
 export default actions
