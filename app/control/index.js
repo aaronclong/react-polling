@@ -20,8 +20,7 @@ network.on('connection', socket => {
     else JSON.stringify(db[interval])
   }
   network.emit('results', data())
-})
-
-network.on('poll', data => {
-  console.log(data)
+  socket.on('poll', data => {
+    console.log(data)
+  })
 })

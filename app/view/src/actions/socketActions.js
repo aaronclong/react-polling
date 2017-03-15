@@ -17,7 +17,6 @@ export function onRecieved (data) {
 export function send () {
   const { formEvent } = store.getState()
   store.dispatch({ type: actions.SOCKET_IO_SEND, selected: formEvent.selected })
-  console.log('Check the async', formEvent.selected)
-  console.log(socket.emit)
-  socket.emit('poll', JSON.stringify({ city: formEvent.selected }), () => console.log('emitted'))
+  const poll = { city: formEvent.selected }
+  socket.emit('poll', poll)
 }
