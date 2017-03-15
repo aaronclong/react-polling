@@ -1,20 +1,20 @@
 import React from 'react'
-import layoutActions from '../actions/layoutActions'
+import { currentItem } from '../actions/layoutActions'
 
 const click = id => {
-  return () => layoutActions(id)
+  return () => currentItem(id)
 }
 
 const generateList = props => {
   const { index, links } = props
-  console.log(index)
-  return links.map((e, i) => <li className='is-active' onClick={click(i)} key={i}> {e} </li>)
+  const check = id => id === index ? 'is-active' : ''
+  return links.map((e, i) => <li className={check(i)} onClick={click(i)} key={i}> {e} </li>)
 }
 
 const list = props => {
   return (
     <ul>
-      {generateList(props)}
+      { generateList(props) }
     </ul>
   )
 }

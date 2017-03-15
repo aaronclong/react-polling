@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import io from 'socket.io-client'
+import socket from './socket'
 import Layout from './pages/Layout'
 import Poll from './pages/Poll'
 import Results from './pages/Results'
@@ -8,14 +8,11 @@ import './App.sass'
 
 class App extends Component {
   componentWillMount () {
-    this.socket = io('http://localhost:4000')
-    this.socket.on('connect', () => {
-      console.log('Socket id %s', this.socket.id)
-    })
+    this.socket = socket
   }
   render () {
     return (
-      <div className='App'>
+      <div>
         <Router history={browserHistory}>
           <Route path='/' component={Layout} >
             <IndexRoute component={Poll} />
