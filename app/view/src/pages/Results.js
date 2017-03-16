@@ -19,15 +19,16 @@ class Results extends Component {
 
   pollRender () {
     d3.select(this.d3).append('svg')
-      .attr('width', window.innerWidth / 3)
-      .attr('height', window.innerHeight / 3)
-      .style('background', '#f4f4f4')
+      .attr('width', 1000)
+      .attr('height', 500)
+      .style('background', 'white')
       .selectAll('rect')
         .data(this.props.data)
         .enter().append('rect')
         .attr('width', 40)
-        .attr('height', d => d.rank * 2)
-        .attr('x', (data, i) => (i * 40) + 10)
+        .attr('height', d => d.rank * 20)
+        .attr('x', (data, i) => i)
+        .attr('y', d => 500 - d.rank)
   }
 
   render () {

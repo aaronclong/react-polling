@@ -12,7 +12,7 @@ const form = data => {
 const Poll = props => {
   let isActive = () => {
     const { formEvent } = store.getState()
-    if (formEvent.sent === true) return false
+    if (formEvent.sent === true) return '' // '"disabled"'
     return ''
   }
   const change = city => {
