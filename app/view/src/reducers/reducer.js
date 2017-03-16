@@ -21,7 +21,7 @@ function activeHeaderLink (state = { currentIndex: 0 }, action) {
 
 function socketIO (state = { connected: false,
   socketId: null,
-  recieved: {},
+  recieved: [],
   sent: {}
 }, action) {
   if (action.type.search('SOCKET_IO_') <= -1) return state
