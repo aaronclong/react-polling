@@ -7,8 +7,6 @@ import list from '../cmp/list'
 let links = [<Link to='/'>Poll</Link>, <Link to='/results'>Results</Link>]
 
 @connect(store => {
-  console.log(store.socketIO)
-  console.log(store.socketIO)
   return { index: store.activeHeaderLink.currentItem }
 })
 class Layout extends Component {

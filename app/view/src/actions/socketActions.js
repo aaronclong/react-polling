@@ -16,6 +16,7 @@ export function onRecieved (data) {
 
 export function send () {
   const { formEvent } = store.getState()
+  if (formEvent.selected === null) return
   store.dispatch({ type: actions.SOCKET_IO_SEND, selected: formEvent.selected })
   const poll = { city: formEvent.selected }
   socket.emit('poll', poll)

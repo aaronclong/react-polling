@@ -53,7 +53,9 @@ function restart (service) {
         break
     }
   } else {
+    backEnd.kill()
     backEnd = createBackEnd()
+    frontEnd.kill()
     frontEnd = createFrontEnd()
   }
 }
