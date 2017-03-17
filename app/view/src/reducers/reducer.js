@@ -14,15 +14,17 @@ function test (state = { something: [] }, action) {
 function activeHeaderLink (state = { currentIndex: 0 }, action) {
   switch (action.type) {
     case actions.ACTIVE_HEADER_LINK:
-      return Object.assign({}, state, {currentItem: action.currentItem})
+      return Object.assign({}, state, { currentItem: action.currentItem })
+    case actions.ACTIVE_HEADER_LOAD:
+      console.log('Happening')
+      return Object.assign({}, state, { currentItem: action.currentItem })
   }
   return state
 }
 
 function socketIO (state = { connected: false,
   socketId: null,
-  recieved: [],
-  sent: {}
+  recieved: []
 }, action) {
   if (action.type.search('SOCKET_IO_') <= -1) return state
   switch (action.type) {
