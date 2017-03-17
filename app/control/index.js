@@ -9,7 +9,10 @@ const io = require('socket.io')
 const query = require('./query')
 const { ifNotCreate, returnDB } = query
 
-const server = app.listen(4000, () => console.log('server started at 4000'))
+const server = app.listen(4000, () => {
+  console.log('server started at 4000')
+  console.log(returnDB())
+})
 
 const network = io.listen(server)
 

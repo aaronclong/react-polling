@@ -1,6 +1,7 @@
 const alasql = require('alasql')
 
 alasql('CREATE TABLE cities (city string, rank number)')
+alasql('INSERT INTO cities VALUES ("Philly", 0), ("São Paulo", 0), ("New York", 0), ("Boston", 0)')
 // Query function
 const ifNotCreate = data => {
   let q = alasql('SELECT * FROM cities WHERE city="' + data['city'] + '"')
