@@ -9,7 +9,7 @@ import * as d3 from 'd3'
 class Results extends Component {
   componentDidMount () {
     this.d3 = this.refs.chart
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 }
+    const margin = { top: 20, right: 20, bottom: 30, left: 80 }
     const width = 960 - margin.left - margin.right
     const height = 500 - margin.top - margin.bottom
     this.chart = d3.select(this.d3).append('svg')
@@ -41,7 +41,7 @@ class Results extends Component {
             // .attr('x', 0)
             .attr('width', d => this.linear.x(d.rank))
             .attr('height', this.linear.y.bandwidth())
-            .attr('y', d => this.linear.y(d.rank))
+            .attr('y', d => this.linear.y(d.city))
     this.chart
          .append('g')
          .attr('transform', 'translate(0,' + this.dimensions.height + ')')
